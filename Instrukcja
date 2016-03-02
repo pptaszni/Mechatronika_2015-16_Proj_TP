@@ -1,0 +1,20 @@
+Instrukcja do pierwszego zadania w ramach projektu.
+
+Zadanie: Obsługa systemu kontroli wersji git, zdalnego repozytorium GitHub, oraz wybór tematu projektu.
+
+Deadline: 02.03.2016 09.00
+
+TODO:
+
+ - nauczyć się korzystania z git'a, obowiązkowe komendy: git clone, git status, git diff, git commit, git push, git checkout; przystepny tutorial: https://www.atlassian.com/git/tutorials/ (najlepiej stworzyć nowe repo w github.com, a potem git clone https://github.com/TwojNick/TwojeRepo.git)
+ - zrobić fork repozytorium, które stworzyłem dla naszej grupy: https://github.com/ptaq666/Mechatronika_2015-16_Proj_TN.git, tutaj napisane jak to zrobić: https://help.github.com/articles/fork-a-repo/
+ - w swojej lokalnej kopii dodać folder "Nazwisko", a w tym folderze dowolny plik tekstowy z dowolną zawartością, oraz [optional] plik zalozenia_projektowe z nazwą projektu i załozeniami projektowymi, wprowadzić zmiany (git commit, git push)
+ - otworzyć pull request, żebym mógł obejrzeć zmiany, zatwierdzić je i scalić z głównym projektem, tutaj napisane jak to zrobić: https://help.github.com/articles/using-pull-requests/
+
+ Oczekiwane: Kiedy wszyscy wykonają zadanie, będę miał komplet waszych kont na githubie i będę mógł każdego dodać jako współpracownika do głównego projektu. Od tej chwili będziecie mogli wprowadzać zmiany bezpośrednio do głównego repozytorium bez potrzeby otwierania pull request.
+
+ Pytania:
+
+  - pawel.ptasznik@pwr.edu.pl
+  - tel. 693450600
+  - skype: ptaq666
