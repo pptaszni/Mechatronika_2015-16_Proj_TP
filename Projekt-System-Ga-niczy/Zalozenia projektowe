@@ -1,0 +1,7 @@
+Projekt zaklada detekcje pozarow w komorze silnika. Detekcja dokonywana jest za pomoca sygnalow otrzymanych z czujnika temperatury oraz dymu.
+Jednostka sterujaca jest OrangePi plus (chinska wersja RaspberryPi)
+Komunikacja z uzytkownikiem jest realizowana za pomoca wyswietlacza LCD, na ktorym wyswietlana jest informacja o aktualnej temperaturze silnika oraz
+sygnaly ostrzegawcze.
+W celach ostrzegawczych zastosowano buzzer oraz diody LED.
+Zastowane rowniez zostana diody LED symulujace swiatla awaryjne, ktore wlaczane beda w momencie pojawienia sie pozaru.
+Akwizycja danych z czujnikow do sieci
