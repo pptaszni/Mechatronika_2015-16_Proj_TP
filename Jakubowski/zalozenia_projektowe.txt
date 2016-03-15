@@ -1,1 +1,4 @@
-W sk³ad grupy wchodz¹: Kacper Jakubowski, Dorota Kardaœ, Tomasz Koñczak
+Projekt zaklada detekcje nadjezdzajacych z naprzeciwka pojazdow w terenie niezabudowanym na podstawie obrazu z kamery. Uklad bedzie wylaczal lub wlaczal swiatla drogowe w zaleznosci czy z naprzeciwka jedzie pojazd.
+Kamere do celow detekcji wstepnie zastapi nam wczesniej nagrany obraz. 
+Interface bedzie skladal sie z obrazu nieprzetworzonego, obrazu po wstepnym przetworzeniu i inforamcji czy swiatla drogowe sa wlaczone. 
+SA TO ZALOZENIA WSTEPNE, ktore moga zostac zastapione modelem rzeczywistym na podstawie jednostki raspberry pi (badz pokrewnej) wraz z zamontowana prosta kamera. Swiatla drogowe bylyby symulowane dioda LED.
