@@ -1,3 +1,4 @@
+Sklad grupy: Kacper Jakubowski, Dorota Kardas, Tomasz Konczak
 Projekt zaklada detekcje nadjezdzajacych z naprzeciwka pojazdow w terenie niezabudowanym na podstawie obrazu z kamery. Uklad bedzie wylaczal lub wlaczal swiatla drogowe w zaleznosci czy z naprzeciwka jedzie pojazd.
 Kamere do celow detekcji wstepnie zastapi nam wczesniej nagrany obraz. 
 Interface bedzie skladal sie z obrazu nieprzetworzonego, obrazu po wstepnym przetworzeniu i inforamcji czy swiatla drogowe sa wlaczone. 
