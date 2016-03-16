@@ -1,0 +1,15 @@
+Projekt: "Aplikacja diagnostyczna na urz¹dzenia z systemem Android"
+
+U¿yte czeœci:
+- Interfejs OBD2 ELM 327 Bluetooth Mini
+
+Za³o¿enia projektowe:
+- Aplikacja na urz¹dzenia z systemem Android (tworzona w Android Studio)
+- Odczyt parametrów silnika i danych z czujników poprzez interfejs ELM 327 Bluetooth
+- Aplikacja utrzymuje sta³e po³¹czenie Bluetooth pomiêdzy wtyczk¹ ELM 327, a telefonem
+- Odczyt danych, przes³anie ich drog¹ bezprzewodow¹ i wyœwietlenie na telefonie
+- Wizualizacja otrzymanych danych (obrotomierze, wykresy, itd.)
+- Implementacja dodatkowych bibliotek "OBD II Java", aby rozszerzyæ mo¿liwoœci diagnostyczne aplikacji
+- Testowanie aplikacji w autach ró¿nych producentów
+- Jeœli starczy czasu to rozszerzenie aplikacji o czytanie kodów b³êdów i usuwanie ich
+
