@@ -15,3 +15,4 @@ Projekt wyglada w porzadku. Teraz musicie rozdrobnic go sobie na male zadania i 
  - raspPi moze nie wyrobic wydajnosciowo, jak by bylo za slabe, dam wam Jetsona TK1
 
 ===================================================
+
