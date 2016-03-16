@@ -1,0 +1,17 @@
+Nazwa projektu: Nowa koncepcja sterownika dachu do Mercedesów 500 SL R129.
+Czlonkowie: Bartosz Koscielniak oraz Dariusz Ksyta
+
+Opis i zalozenia projektowe (wstepnie): 
+      Projekt ma na celu stworzenie nowej koncepcji sterownika dachu do Mercedesa 500 SL R129 rocznik 1992.
+      Sterownik bedzie obslugiwal proces otwiernia/zamykania dachu typu soft (dach miekki - letni).
+      Zostanie on wykonany na podstawie wzorcowej, oryginalnej i uszkodzonej wersji sterownika (kod producenta 129 820 00 97).
+      Bedziemy cheili udoskonalic (w miare mozliwosci) ten produkt poprzez:
+        - zastosowanie nowszych i lepszych elementów elektronicznych.
+        - zmieniejszenie gabrytów sterownika.
+      W tym celu:
+        - wykonamy projekt nowej plytki sterownika, wydrukujemy ja oraz naniesiemy dobrane elementy elektroniczne (hardware).
+        - stworzymy oprogramowanie i zaprogramujemy sterownik do obslugi procesu otwierania/zamykania dachu (software).
+        - przetestujemy nasz sterownik (sprawdzimy czy uzyskujemy odpowiednie napiecia na przekaznikach oraz ewentualnie za zgoda wlascieciela pojazdu przetestujemy go w pojezdzie).
+        - wykonamy odpowiednia obudowe na to urzadzenie.
+        - sporzadzimy odpowiedni raport (prezentacje) z przebiegu naszej pracy na podstawie raportow tygodniowych i zrodel.
+        
