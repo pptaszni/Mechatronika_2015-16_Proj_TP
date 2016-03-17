@@ -1,0 +1,15 @@
+Sk³ad: Bartosz Dalaszyñski
+
+Temat: "Asystent parkowania"
+
+Wizja projektu:
+stworzenie algorytmu umo¿liwiaj¹cego zautomatyzowane parkowanie samochodu pomiêdzy/obok innych obiektów 
+(np. w gara¿u lub na zat³oczonym parkingu). Pojazd powinien przej¹æ kontrolê nad sterowaniem i wykonaæ
+ca³¹ operacjê samodzielnie.
+
+Za³o¿enia:
+-zastosowanie czujników ultradŸwiêkowych w celu ustalenia odleg³oœci od przeszkody,
+-budowa modelu samochodu. U¿ycie dwóch serwomechanizmów:
+ napêd na tylne ko³a oraz skrêcanie przednimi ko³ami,
+-napisanie algorytmu steruj¹cego napêdami pojazdu w zale¿noœci od po³o¿enia pojazdu,
+-wykorzystanie Arduino do sterowania ca³ym procesem (mo¿liwa zamiana na Respberry Pi).
