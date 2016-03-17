@@ -1,0 +1,18 @@
+Sklad grupy: Kacper Jakubowski, Dorota Kardas, Tomasz Konczak
+Projekt zaklada detekcje nadjezdzajacych z naprzeciwka pojazdow w terenie niezabudowanym na podstawie obrazu z kamery. Uklad bedzie wylaczal lub wlaczal swiatla drogowe w zaleznosci czy z naprzeciwka jedzie pojazd.
+Kamere do celow detekcji wstepnie zastapi nam wczesniej nagrany obraz. 
+Interface bedzie skladal sie z obrazu nieprzetworzonego, obrazu po wstepnym przetworzeniu i inforamcji czy swiatla drogowe sa wlaczone. 
+SA TO ZALOZENIA WSTEPNE, ktore moga zostac zastapione modelem rzeczywistym na podstawie jednostki raspberry pi (badz pokrewnej) wraz z zamontowana prosta kamera. Swiatla drogowe bylyby symulowane dioda LED.
+
+
+=============== Komentarz: =======================
+
+Projekt wyglada w porzadku. Teraz musicie rozdrobnic go sobie na male zadania i podzielic miedzy siebie. Proponuje zrobic to do 23.03. Ponizej podaje moja wstepna propozycje zadan do wykonania, zmodyfikujcie ja wedlug uznania:
+ - research odnosnie systemow do detekcji obrazu, w szczegolnosci samochodow, wiem ze ostatnio nvidia wypuscila CUDA DNN, co pozwala w miare szybko nauczyc siec neuronowa klasyfikowac obrazy, jezeli dysponuje sie odpowiednio duza baza
+ - zbiorka materialow testowych; mozna nagrac samemu, albo poszukac filmikow/obrazkow w internecie, starajcie sie aby filmiki byly do siebie podobne (1-3 dni)
+ - wybor systemu (lub kilku systemow i ich porownanie) do detekcji obrazu; jest sporo gotowych bibliotek ktore to robia (max tydzien, wszyscy moga to robic rownolegle)
+ - jezeli chcecie zeby to dzialalo w real time, to sprawdzcie wydajnosc rozwiazania w kontekscie czestotliwosci probkowania obrazu
+ - raspPi moze nie wyrobic wydajnosciowo, jak by bylo za slabe, dam wam Jetsona TK1
+
+===================================================
+

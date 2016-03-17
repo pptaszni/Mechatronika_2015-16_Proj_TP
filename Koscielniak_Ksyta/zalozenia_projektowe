@@ -1,0 +1,28 @@
+Nazwa projektu: Nowa koncepcja sterownika dachu do Mercedesów 500 SL R129.
+Czlonkowie: Bartosz Koscielniak oraz Dariusz Ksyta
+
+Opis i zalozenia projektowe (wstepnie): 
+      Projekt ma na celu stworzenie nowej koncepcji sterownika dachu do Mercedesa 500 SL R129 rocznik 1992.
+      Sterownik bedzie obslugiwal proces otwiernia/zamykania dachu typu soft (dach miekki - letni).
+      Zostanie on wykonany na podstawie wzorcowej, oryginalnej i uszkodzonej wersji sterownika (kod producenta 129 820 00 97).
+      Bedziemy cheili udoskonalic (w miare mozliwosci) ten produkt poprzez:
+        - zastosowanie nowszych i lepszych elementów elektronicznych.
+        - zmieniejszenie gabrytów sterownika.
+      W tym celu:
+        - wykonamy projekt nowej plytki sterownika, wydrukujemy ja oraz naniesiemy dobrane elementy elektroniczne (hardware).
+        - stworzymy oprogramowanie i zaprogramujemy sterownik do obslugi procesu otwierania/zamykania dachu (software).
+        - przetestujemy nasz sterownik (sprawdzimy czy uzyskujemy odpowiednie napiecia na przekaznikach oraz ewentualnie za zgoda wlascieciela pojazdu przetestujemy go w pojezdzie).
+        - wykonamy odpowiednia obudowe na to urzadzenie.
+        - sporzadzimy odpowiedni raport (prezentacje) z przebiegu naszej pracy na podstawie raportow tygodniowych i zrodel.
+        
+
+=============== Komentarz: =======================
+
+Hmm, w zasadzie OK, jeśli macie dostęp do tych sterownikw, ich specyfikacji i jestescie w stanie pomierzyc co wchodzi, a co wychodzi z dzialajacego urzadzenia.
+Tylko nie robcie kopii tego urzadzenia. Mamy teraz duzo lepsze elementy elektroniczne do dyspozycji i na pewno mozna to zrobic taniej i lepiej od oryginalu.
+
+Wykres ogolnie w porzadku, chociaz powinniscie starac sie robic postawione sobie zadania przed czasem, bo zawsze jest tak, ze w koncu trafia sie na cos co nie dziala i wtedy caly projekt sie sypie, bo jest policzony do czerwca :)
+Punkt 2 bedzie bardzo istotny, upewnijcie sie, ze na pewno znacie specyfikacje input/output.
+Jezeli chodzi o dokumentacje, to za bardzo nie szalejcie. Wystarczy zwiezly opis, tak zeby dalo sie z tego korzystac.
+
+=================================================== 

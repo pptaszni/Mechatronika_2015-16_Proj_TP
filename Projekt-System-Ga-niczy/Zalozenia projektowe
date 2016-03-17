@@ -1,0 +1,35 @@
+Projekt zaklada detekcje pozarow w komorze silnika. Detekcja dokonywana jest za pomoca sygnalow otrzymanych z czujnika temperatury oraz dymu.
+Jednostka sterujaca jest OrangePi plus (chinska wersja RaspberryPi)
+Komunikacja z uzytkownikiem jest realizowana za pomoca wyswietlacza LCD, na ktorym wyswietlana jest informacja o aktualnej temperaturze silnika oraz
+sygnaly ostrzegawcze.
+W celach ostrzegawczych zastosowano buzzer oraz diody LED.
+Zastowane rowniez zostana diody LED symulujace swiatla awaryjne, ktore wlaczane beda w momencie pojawienia sie pozaru.
+Akwizycja danych z czujnikow do sieci
+
+
+
+=============== Komentarz: =======================
+
+Projekt ciekawy i dosyc skomplikowany. Podobnie jak inne grupy, chcialbym zebyscie do 23.03 rozbili projekt na liste malych zadan do wykonania, sprobowali nadac im estymaty czasowe i rozdzielili je miedzy siebie. Ponizej kilka moich uwag i propozycje zadanek, oczywiscie do dowolnego zmodyfikowania w przyszlosci:
+
+ - projektujac taki system najwazniejsze jest, zeby glowny kontroler i czujniki do niego podlaczane byly ze soba zgodne pod wzgledem protokolow komunikacyjnych i napiec logicznych
+ - jezeli chodzi o komunikacje, w specyfikacji Oragne Pi wspomina sie jedynie o UART (Universal Asynchronous Receiver and Transmitter), chociaz jest on niby compatible with RaspberryPi B+, ktory niby obsluguje dodatkowo jedna szyne I2C, jedna szyne SPI i ma GPCLK, wiec moze bedzie OK
+ - proponowany LCD steruje sie po szynie szeregowej synchronizowanej zegarem, wiec bedziecie musieli zaimplementowac sami odpowiedni protokol; moze to byc dla was dosyc trudne, jezeli robicie to po raz pierwszy, ale powinniscie sobie poradzic; protokol jest prawie jak I2C, rozni sie chyba tylko tym ze bit jest czytany od razu na zboczu zegara
+ - proponowany czujnik dymu wypluwa zarowno analoga jak i cyfre; z cyfra nie ma zadnego problemu, 0-nie ma dymu, 1-jest dym, ale jak byscie chcieli, to mozecie skorzystac jakiegods ADC (analog to digital converter) i sprobowac odczytac analog output
+ - buzzer jest sterowany PWM (w sumie to moze byc nawet zwykly prostokat 50:50) o czestotliwosci 2kHz - 5kHz (w sumie troche dziwnie, moze zle przeczytalem ten opis od Chinczyka), sprawdzcie czy wasz Orange Pi moze cos takiego wygenerowac
+ - "The DS18B20 communicates over a 1-Wire bus" - nie wiem czy kiedykolwiek implementowaliscie 1-wire, generalnie jest z tym troche roboty i jak nie dziala, to nie wiadomo dlaczego :) nie jestem pewny, czy Orange Pi bedzie wystarczajaco "real time", zeby porozmawiac z tym czujnikiem
+
+Ogolnie przemyslcie dobrze tego Orange Pi, bo wydaje mi sie, ze bedziecie potrzebowali jakiegos bardziej real time klocka, ktory da wam dostep do kilku zegarow, ich przerwan i generatorow PWM. Generalnie kazda AtMega, Arduino, czy ktorykolwiek 16-bit od NXP.com powinien sie nadac. Jak cos, to dam wam na chwile moja stara plytke z Atmega32, ale poszukajcie moze sami cos ogarniecie.
+
+Zadanka, ktore pojawia sie "na bank":
+ - ogarnac teoretycznie komunikacje z LCD (1-2 dni)
+ - ogarnac teoretycznie komunikacje z czujnikiem dymu (max 1 dzien)
+ - ogarnac teoretycznie sterowanie buzzera (max 1 dzien)
+ - ogarnac teoretycznie komunikacje z termometrem (1-2 dni)
+ - dobrac nowy kontroler, albo upewnic sie, ze orangePi da sobie rade (1 dzien)
+ - zaprogramowac kontroler, zeby rozmawial z kazdym z komponentow (1-3 dni, zaleznie od skomplikowania protokolu)
+ - przetestowac, skalibrowac czujniki i buzzer
+
+Przemyslcie dobrze ta kwestie jednostki sterujacej, poszukajcie, czy za 50$ nie dostaniecie jakiegos lepszego kontrolera (z programatorem), w razie problemow pobrobujcie na roznym sprzecie.
+
+===================================================
