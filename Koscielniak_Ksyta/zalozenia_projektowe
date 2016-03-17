@@ -15,3 +15,14 @@ Opis i zalozenia projektowe (wstepnie):
         - wykonamy odpowiednia obudowe na to urzadzenie.
         - sporzadzimy odpowiedni raport (prezentacje) z przebiegu naszej pracy na podstawie raportow tygodniowych i zrodel.
         
+
+=============== Komentarz: =======================
+
+Hmm, w zasadzie OK, jeśli macie dostęp do tych sterownikw, ich specyfikacji i jestescie w stanie pomierzyc co wchodzi, a co wychodzi z dzialajacego urzadzenia.
+Tylko nie robcie kopii tego urzadzenia. Mamy teraz duzo lepsze elementy elektroniczne do dyspozycji i na pewno mozna to zrobic taniej i lepiej od oryginalu.
+
+Wykres ogolnie w porzadku, chociaz powinniscie starac sie robic postawione sobie zadania przed czasem, bo zawsze jest tak, ze w koncu trafia sie na cos co nie dziala i wtedy caly projekt sie sypie, bo jest policzony do czerwca :)
+Punkt 2 bedzie bardzo istotny, upewnijcie sie, ze na pewno znacie specyfikacje input/output.
+Jezeli chodzi o dokumentacje, to za bardzo nie szalejcie. Wystarczy zwiezly opis, tak zeby dalo sie z tego korzystac.
+
+=================================================== 
