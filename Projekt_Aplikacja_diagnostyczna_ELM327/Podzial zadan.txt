@@ -1,0 +1,48 @@
+Info:
+- Terminy realizacji okreœlone orientacyjnie ze wzglêdu ¿e nie programowaliœmy wczeœniej w Javie i dopiero siê uczymy tego jêzyka - nie wiemy jak sprawnie bêdzie sz³a nam praca
+- Planujemy, aby projekt by³ ukoñczony to koñca maja, w czerwcu tylko testy w ró¿nych autach
+- Przetestowaliœmy po³¹czenie telefonu z ELM 327 za pomoc¹ samodzielnie napisanych funkcji do obs³ugi Bluetooth (dzia³a)
+- Do wymiany informacji pomiêdzy ELM 327 a telefonem u¿yjemy dodatkowej biblioteki (https://github.com/pires/obd-java-api)
+- Powinniœmy zd¹¿yæ ogarn¹æ odczytywanie kodów b³êdów, nie wiemy jaki jest stopieñ trudnoœci ich usuwania (jeœli nie bêdzie to zbyt skomplikowane to zrobimy)
+- Konkretny podzia³ na klasy, funkcje, itd. w najbli¿szym czasie po wybraniu z których czujników bêdziemy zczytywaæ dane
+
+=======================================
+
+Zadania do wykonania:
+1. ELM 327 Bluetooth - konfiguracja i ³¹cznoœæ (analiza literatury) - wszyscy (~15.03)
+2. Nawi¹zanie po³¹czenia Bluetooth z ELM 327 i  jego konfiguracja - Zuchniak (~20.03)
+3. Implementacja dodatkowych bibliotek do obs³ugi ELM 327 - Zuchniak (~20.03)
+4. Menu g³ówne aplikacji - Zuchniak (~30.03)
+5. Odczyt i wyœwietlenie konkretnych danych z czujników - wszyscy (ka¿dy otrzyma po kilka czujników, szczegó³owy podzia³ wkrótce) (~20.04) 
+--->przyk³adowe dane z czujników obs³ugiwane przez ELM 327:
+	Engine RPM
+      	Calculated Load Value
+      	Coolant Temperature
+      	Fuel System Status
+      	Vehicle Speed
+      	Short Term Fuel Trim
+      	Long Term Fuel Trim
+      	Intake Manifold Pressure
+      	Timing Advance
+      	Intake Air Temperature
+      	Air Flow Rate
+      	Absolute Throttle Position
+      	Oxygen sensor voltages/associated short term fuel trims
+      	Fuel System status
+      	Fuel Pressure
+--->Okreœlimy, które z nich s¹ najistotniejsze i wystêpuj¹ w wiêkszoœci aut (potem uaktualniê które z nich wybraliœmy z konkretnym podzia³em kto za nie odpowiada)
+6. Wizualizacja danych (obrotomierze, wykresy, itp.) - Cichos (~15.05)
+7. Odczytywanie kodów b³êdów - Bartsch (~15.05)
+8. Usuwanie kodów b³êdów - Cichos, Bartsch (~30.05) - jeœli nie oka¿e sie zbyt skomplikowane
+9. Testy w autach ró¿nych producentów - wszyscy (~10.06)
+10. Krótka dokumentacja projektu - wszyscy (tworzona na bie¿¹co)
+
+====================================
+
+Klasy, które wyst¹pi¹ w aplikacji (wstêpny podzia³, bêdzie uaktualniane na bie¿¹co):
+- MainActivity
+- UserMenu
+- BluetoothManager
+- OBDReader
+- Visualization
+- FaultCodes
