@@ -1,0 +1,30 @@
+Projekt: "Aplikacja diagnostyczna na urz¹dzenia z systemem Android"
+
+U¿yte czeœci:
+- Interfejs OBD2 ELM 327 Bluetooth Mini
+
+Za³o¿enia projektowe:
+- Aplikacja na urz¹dzenia z systemem Android (tworzona w Android Studio)
+- Odczyt parametrów silnika i danych z czujników poprzez interfejs ELM 327 Bluetooth
+- Aplikacja utrzymuje sta³e po³¹czenie Bluetooth pomiêdzy wtyczk¹ ELM 327, a telefonem
+- Odczyt danych, przes³anie ich drog¹ bezprzewodow¹ i wyœwietlenie na telefonie
+- Wizualizacja otrzymanych danych (obrotomierze, wykresy, itd.)
+- Implementacja dodatkowych bibliotek "OBD II Java", aby rozszerzyæ mo¿liwoœci diagnostyczne aplikacji
+- Testowanie aplikacji w autach ró¿nych producentów
+- Jeœli starczy czasu to rozszerzenie aplikacji o czytanie kodów b³êdów i usuwanie ich
+
+=============== Komentarz: =======================
+
+Ogolnie spoko, tylko upewnijcie sie, ze bedziecie wiedzieli w jaki sposob z ta wtyczka rozmawiac, bo widze ze to jest juz jakis gotowy produkt z napisana apka, raczej nie pod deweloperke.
+Jezeli okaze sie, ze nie poznacie protokolu po ktorym to nadaje, bedziecie musieli zmontowac wlasna wtyczke od zera. Super trudne moze to nie jest, ale troche roboty bedzie.
+Oprocz tego spoko, postarajcie sie na przyszly tydzien (23.03) doprecyzowac poszczegolne zadanka, np.:
+
+ - research w zakresie protokolu komunikacyjnego z wtyczka (1 dzien)
+ - nakreslenie szkieletu aplikacji (np. MainComponent, BluetoothService, UserMenu, EngineView, FaultView etc.) (1 dzien)
+ - napisanie unit testow do poszczegolnych klas (optional, ale polecam)
+ - implementacja poszczegolnych funkcjonalnosci (to juz zalezy, co konkretnie ma powstac)
+
+Dajcie znac jak najszybciej, czy uda sie rzeczywiscie skorzystac z tego ELM327.
+
+===================================================
+
