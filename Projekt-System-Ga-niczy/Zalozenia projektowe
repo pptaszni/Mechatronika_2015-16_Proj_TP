@@ -33,3 +33,12 @@ Zadanka, ktore pojawia sie "na bank":
 Przemyslcie dobrze ta kwestie jednostki sterujacej, poszukajcie, czy za 50$ nie dostaniecie jakiegos lepszego kontrolera (z programatorem), w razie problemow pobrobujcie na roznym sprzecie.
 
 ===================================================
+ =============== Komentarz 2=======================
+ 
+ Orange pi ma w sobie i2c, wiec nie bedzie wiekszego problemu, tak samo spi.
+ Odnosnie czujnika temperatury, to juz go wykorzystywalem w pracy inzynierskiej, wiec komunikacje z nim mam rozpykana w C, jedyne zadanie to przerzucic do Pythona
+ czujnik dymu na poczatku zrobimy z cyfrowym pomiarem, jak starczy czasu to przerobimy na ADC, bo to nie jest trudne.
+ Buzera mysle ze po prostu podepniemy mu sygnal pwm i z glowy, jak starczy czasu to jakis efekt moze sie zrobi, z narastaniem sygnalu i opadaniem 
+ Orange pi da sobie rade, wykorzystamy jednoczesnie kilka procesorowo, wiec damy rade osiagnac system bliski RT. 
+ Jakby orange nie dawal rade to mamy w zapasie pare atmeg 32 i jedna 8 :)
+ Jeżeli ten lcd bedzie sie buntowal to przerzucimy sie w ostatecznosci na hd44780 bo to juz wiele razy przerabialismy na studiach
