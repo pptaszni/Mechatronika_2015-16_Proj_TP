@@ -1,0 +1,15 @@
+Temat: "System automatycznego parkowania"
+
+Za³o¿enia:
+Zbudowanie systemu automatycznego parkowania w oparciu o ultradŸwiêkowe czujniki odleg³oœci HC-SR04.
+Zaimplementowanie systemu do zdalnie sterowanego samochodu.
+Komunikacja z u¿ytkownikiem - wyœwietlanie komend typu puœæ kierownicê itp.
+
+Zadania do wykonania:
+-Przegl¹d literaturowy
+-przerobienie autka na potrzeby projektu - zamiana silniczka DC odpowiedzialnego za skrêt kó³ na serwo modelarskie w celu bardziej precyzyjnego skrêtu.
+-zrobienie sterowania silnikiem napêdzaj¹cym tyln¹ oœ - w oparciu o mostek H
+-rozmieszczenie czujników na obwodzie autka (iloœæ pewnie wyjdzie doœwiadczalnie)
+-napisanie oprogramowania analizuj¹cego odleg³oœci i podejmuj¹cego odpowiednie decyzje (jednostka steruj¹ca - raczej arduino)
+-komunikacja z u¿ytkownikiem - wyœwietlacz HD44780, albo smartfon - czas oka¿e
+-testy
