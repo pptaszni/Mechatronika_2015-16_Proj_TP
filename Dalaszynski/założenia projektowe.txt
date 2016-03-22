@@ -1,8 +1,16 @@
-Sk≥ad: Bartosz DalaszyÒski
+Sk≈Çad: Bartosz Dalaszy≈Ñski
 
 Temat: "Linefollower"
 
 
-Za≥oøenia:
-Stworzenie pojazdu typu "linefollower" (szczegÛ≥y wkrÛtce).
+Za≈Ço≈ºenia:
+Stworzenie pojazdu typu "linefollower".
+Czesc mechaniczna pojazdu bedzie stworzona na bazie posiadanego zdalnie sterowanego samochodu-zabawki.
+Czesc elektroniczna i programistyczna bedzie stworzona od zera.
 
+Zadania do wykonania:
+1) wymontowanie silnik√≥w z samochodu-zabawki i sprawdzenie ich parametr√≥w (w tym napiecia zasilania). Samochodzik posiada dwa silniki - jeden zapewnia ruch liniowy (tylne kola), a drugi obrotowy (przednie kola).
+2) Zaprojektowanie zasilania. Uzyte beda akumulatory z mozliwoscia ponownego ladowania.
+3) Stworzenie schematu elektronicznego. Uzycie Arduino jako kontrolera. Sterowanie silnikami przy pomocy mostka H. Uzycie czujnikow detekcji barwy podloza w celu sledzenia drogi
+4) Stworzenie algorytmu sterujacego ruchem pojazdu.
+5) Testy.
