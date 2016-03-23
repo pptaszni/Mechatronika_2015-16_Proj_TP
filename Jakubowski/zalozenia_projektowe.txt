@@ -16,3 +16,9 @@ Projekt wyglada w porzadku. Teraz musicie rozdrobnic go sobie na male zadania i 
 
 ===================================================
 
+================== Komentarz 2: =================================================
+
+Mamy rowniez druga koncepcje, ktora bedzie dla nas latwiejsza do zrealizowania, poniewaz posiadamy do niej odpowiednia jednostke oraz czujniki: natezenia swiatla, deszczu i obiektow.
+System tak jak poprzednio zmienialby światla dlugie na krotkie w momencie wykrycia auta jadacego z przeciwka (na podstawie czujnika natezenia swiatla). Czujnik ruchu ma zasieg okolo 20 m, to niewiele ale mozna tez dodac opcje, ze swiatla beda sie zmienialy przy wykryciu pieszego. No i czujnik deszczu, ktory zalaczalby wycieraczki. Wszystko oparte na Arduino UNO.
+
+===========================================================
