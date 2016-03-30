@@ -1,0 +1,40 @@
+Warunki zaliczenia i system oceniania projektow
+
+
+Projekty oceniane beda w skali punktowej, a nastepnie punkty zostana przekonwertowane na ocene w nastepujacy sposob:
+
+    | % punktow | ocena |
+    |-----------|-------|
+    | [0, 50)   | 2.0   |
+    | [50, 60)  | 3.0   |
+    | [60, 70)  | 3.5   |
+    | [70, 80)  | 4.0   |
+    | [80, 90)  | 4.5   |
+    | [90, 100] | 5.0   |
+
+W przypadku uzyskania [90, 100] % punktow, jezeli projekt bedzie bardzo zaawansowany, a autorzy wykaza sie profesjonalizmem, stawiam ocene celujaca (5.5).
+
+Punkty przyznawane beda za:
+
+ - stopień realizacji założeń projektowych, 0-20 pkt. [1]
+ - systematyczna praca potwierdzona raportami, 0-20 pkt. [2]
+ - stopien trudnosci projektu, 0-10 pkt. [3]
+ - subiektywna ocena kolegów z grupy zajęciowej, 0-10 pkt. [4]
+ - prezentacja końcowa, 0-20 pkt. [5]
+
+W sumie wyszlo 80 pkt.
+
+[1] 100% dostepnych punktow, jezeli wszystkie zalozenia zostana spelnione i bedzie to widoczne na koncowej prezentacji. Zalozenia [opcjonalne] pomijam, jezeli nie uda sie ich zrealizowac.
+[2] Na podstawie historii w githubie. Mysle, ze 100% punktow bedzie OK dla grup, ktore aktualizowaly repo co najmniej raz w tygodniu.
+[3] Moje subiektywne wrazenie.
+[4] Wasze subiektywne wrazenie. Wprowadzilem ten wspolczynnik, zeby zminimalizowac stopien niezadowolenia z mojej oceny na tle innych studentow. Kazdy student bedzie musial zaglosowac na kazdy z projektow [0-10], po czym zostanie policzona srednia arytmetyczna z wszystkich glosow.
+[5] Prosze powaznie potraktowac ten punkt. Umiejetnosc zaprezentowania wynikow swojej pracy klientowi jest rownie wazna, co wklad merytoryczny. Na razie proponuje dwie formy prezentacji:
+         - umowic sie ze mna na konsultacje w GTB i przedstawic projekt osobiscie; zabrac ze soba caly potrzebny sprzet, laptopy mozna u mnie podpiac pod duzy ekran
+         - nakrecic dobrej jakosci filmik/montaz w sprzyjajacych warunkach i wrzucic na repo; wykorzystajcie wszystkie znane wam narzedzia, chwyty w stylu reklamy Volvo z Jean-Claude Van Damme mile widziane
+    Od razu zaznaczam, ze sam plik PDF, czy prezentacja Power Point z dokumentacja i kilkoma wykresami/zdjeciami nie zostanie oceniona na 100%
+
+
+Dla osob ktore pracuja w grupach 2-3 osobowych: macie mozliwosc pomnozenia przyznanej liczby punktow przez ilosc osob w grupie i redystrybucji punktow miedzy siebie wedlug uznania. Prosze korzystac z tej opcji z rozwaga, tylko jezeli uznacie ze rzeczywiscie istnieje taka potrzeba.
+
+
+Wszystkie powyzsze warunki sa do negocjacji. Jezeli macie jakies propozycje, cos dodac, cos zmienic, prosze pisac.
