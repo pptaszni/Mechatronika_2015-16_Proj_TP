@@ -1,0 +1,7 @@
+Aktualizacja 1 (31.03)
+==================================
+- na bie¿¹co analizujemy literaturê o programowaniu w Javie i tworzeniu aplikacji na Androida
+- stworzyliœmy wstêpna czêœæ aplikacji (wstêpne menu, metody do po³¹czenia Bluetooth)
+- zamówiliœmy modu³ ELM327 z Aliexpress, czekamy a¿ przyjdzie, powinien byæ na poczatku kwietnia (wtedy prace rusz¹ sprawniej, bo bêdzie mozna na bie¿¹co testowaæ)
+- mieliœmy po¿yczony taki modu³, sprawdziliœmy po³¹czenie apki z modu³em (nawi¹zano po³¹czenie), ale musieliœmy go oddaæ do przetestowaniu
+- do projektu zaimplementowalismy dodatkowa bilioteke do obslugi ELM327, czekamy na modu³ aby przetestowaæ funkcje w niej zawarte
