@@ -1,0 +1,7 @@
+======== 05.04.16 ============================
+- Zakupiliœmy czujniki natê¿enia œwiat³a, wilgoci oraz czujnik wykrywaj¹cy ruch. 
+- Przetestowaliœmy je i jesteœmy zaskoczeni ich niezawodnoœci¹ i szybkoœci¹ dzia³ania. 
+- Pracujemy nad odpowiednim programem.
+- Chcemy te¿ zrobiæ mini makietê ilustruj¹c¹ rozmieszczenie czujników. Dysponujemy drukark¹ 3D, mo¿emy wiêc j¹ zaprojektowaæ i wydrukowaæ.
+- W ramach systemu przetwarzania obrazu wykonane zosta³o nagranie z nocnego przejazdu zarówno po terenie niezabudowanym jak i zabudowanym.
+==========================================================
