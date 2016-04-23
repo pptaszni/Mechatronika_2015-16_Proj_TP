@@ -6,3 +6,8 @@
 - W ramach systemu przetwarzania obrazu wykonane zosta³o nagranie z nocnego przejazdu zarówno po terenie niezabudowanym jak i zabudowanym.
 ==========================================================
 Dodatkowy komentarz: Zastanawiaj¹c siê nad projektem znaleŸliœmy czujnik ruchu o zakresie pracy 20m i stwierdzilismy, ¿e jest sens go zastosowaæ. Potem robi¹c zamówienie poszlismy po kosztach i dopiero bawi¹c sie nim zauwa¿yliœmy, ¿e kupilismy czujnik o zasiêgu 7m, ale stwierdzamy, ¿e do projektu prototypowego wystarczy, a inna sprawa, ¿e nie wiemy kiedy przyszed³by ten z wiekszym zasiêgiem.
+==========================================================
+
+====================== 23.04.16 ============================
+Dodaliœmy opis uk³adu elektronicznego.
+==========================================================
