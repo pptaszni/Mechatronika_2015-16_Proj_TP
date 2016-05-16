@@ -8,13 +8,23 @@
         android:title="Połącz Bluetooth"
         app:showAsAction="never" />
     <item
-    android:id="@+id/disconnect"
-    android:orderInCategory="100"
-    android:title="Rozłącz Bluetooth"
-    app:showAsAction="never" />
+        android:id="@+id/disconnect"
+        android:orderInCategory="100"
+        android:title="Rozłącz Bluetooth"
+        app:showAsAction="never" />
     <item
         android:id="@+id/settings"
         android:orderInCategory="100"
         android:title="Opcje"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/graph"
+        android:orderInCategory="100"
+        android:title="Przejdź do wykresów"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/visualisation"
+        android:orderInCategory="100"
+        android:title="Przejdź do wizualizacji/obrotomierzy"
         app:showAsAction="never" />
 </menu>
