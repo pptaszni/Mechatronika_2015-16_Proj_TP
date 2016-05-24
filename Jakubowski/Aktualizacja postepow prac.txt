@@ -1,13 +1,18 @@
 ======== 05.04.16 ============================
-- Zakupiliœmy czujniki natê¿enia œwiat³a, wilgoci oraz czujnik wykrywaj¹cy ruch. 
-- Przetestowaliœmy je i jesteœmy zaskoczeni ich niezawodnoœci¹ i szybkoœci¹ dzia³ania. 
+- ZakupiliÅ›my czujniki natÄ™Å¼enia Å›wiatÅ‚a, wilgoci oraz czujnik wykrywajÄ…cy ruch. 
+- PrzetestowaliÅ›my je i jesteÅ›my zaskoczeni ich niezawodnoÅ›ciÄ… i szybkoÅ›ciÄ… dziaÅ‚ania. 
 - Pracujemy nad odpowiednim programem.
-- Chcemy te¿ zrobiæ mini makietê ilustruj¹c¹ rozmieszczenie czujników. Dysponujemy drukark¹ 3D, mo¿emy wiêc j¹ zaprojektowaæ i wydrukowaæ.
-- W ramach systemu przetwarzania obrazu wykonane zosta³o nagranie z nocnego przejazdu zarówno po terenie niezabudowanym jak i zabudowanym.
+- Chcemy teÅ¼ zrobiÄ‡ mini makietÄ™ ilustrujÄ…cÄ… rozmieszczenie czujnikÃ³w. Dysponujemy drukarkÄ… 3D, moÅ¼emy wiÄ™c jÄ… zaprojektowaÄ‡ i wydrukowaÄ‡.
+- W ramach systemu przetwarzania obrazu wykonane zostaÅ‚o nagranie z nocnego przejazdu zarÃ³wno po terenie niezabudowanym jak i zabudowanym.
 ==========================================================
-Dodatkowy komentarz: Zastanawiaj¹c siê nad projektem znaleŸliœmy czujnik ruchu o zakresie pracy 20m i stwierdzilismy, ¿e jest sens go zastosowaæ. Potem robi¹c zamówienie poszlismy po kosztach i dopiero bawi¹c sie nim zauwa¿yliœmy, ¿e kupilismy czujnik o zasiêgu 7m, ale stwierdzamy, ¿e do projektu prototypowego wystarczy, a inna sprawa, ¿e nie wiemy kiedy przyszed³by ten z wiekszym zasiêgiem.
+Dodatkowy komentarz: ZastanawiajÄ…c siÄ™ nad projektem znaleÅºliÅ›my czujnik ruchu o zakresie pracy 20m i stwierdzilismy, Å¼e jest sens go zastosowaÄ‡. Potem robiÄ…c zamÃ³wienie poszlismy po kosztach i dopiero bawiÄ…c sie nim zauwaÅ¼yliÅ›my, Å¼e kupilismy czujnik o zasiÄ™gu 7m, ale stwierdzamy, Å¼e do projektu prototypowego wystarczy, a inna sprawa, Å¼e nie wiemy kiedy przyszedÅ‚by ten z wiekszym zasiÄ™giem.
 ==========================================================
 
 ====================== 23.04.16 ============================
-Dodaliœmy opis uk³adu elektronicznego.
+DodaliÅ›my opis ukÅ‚adu elektronicznego.
 ==========================================================
+
+=================== 24.05.16 ===============================
+Dodano schemat elektryczny ukÅ‚adu z czujnikami natÄ™Å¼enia Å›wiatÅ‚a
+PrzeglÄ…dam algorytmy do przetwarzania obrazu, ale z powodu natÅ‚oku prac idzie to bardzo powoli. Filmu nagranego nie wrzucÄ™, bo zajmuje on ponad GB, z moim internetem czekaÅ‚bym tydzieÅ„. Dopiero jak odpowiednio to przetworzÄ™ to wrzucÄ™. 
+===============================================================
