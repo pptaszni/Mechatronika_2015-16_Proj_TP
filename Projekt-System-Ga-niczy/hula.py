@@ -1,3 +1,5 @@
+#Podelismy decyzje, ze bardzo na reke nam by bylo zaliczenie na podstawie filmu z powodu wielu zaliczeń, tak wiec wybieramy ta opcje.
+#Program dziala poprawnie, lecz tak jak wspomniano w filmie zasilacz niestety nie jest w stanie wszystkiego zasilic na raz.
 import RPi.GPIO as GPIO
 import time
 
