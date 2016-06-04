@@ -12,36 +12,14 @@
     tools:context="mati.obd2bluetooth.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Prędkość:"
-        android:id="@+id/speed"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="61dp" />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Prędkość obrotowa:"
-        android:id="@+id/RPM"
-        android:layout_below="@+id/speed"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Temperatura:"
-        android:id="@+id/temperature"
-        android:layout_below="@+id/RPM"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,7 +28,8 @@
         android:text="Status:"
         android:id="@+id/status"
         android:textColor="#304ffe"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,8 +46,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Prędkość:"
+        android:id="@+id/speed"
+        android:layout_below="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/Speed_Value"
-        android:layout_above="@+id/RPM"
+        android:text="---"
+        android:layout_above="@+id/speedometer"
         android:layout_toRightOf="@+id/speed"
         android:layout_toEndOf="@+id/speed" />
 
@@ -76,8 +66,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Prędkość obrotowa:"
+        android:id="@+id/RPM"
+        android:layout_alignTop="@+id/RPM_Value"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/RPM_Value"
-        android:layout_below="@+id/Speed_Value"
+        android:text="---"
+        android:layout_below="@+id/speedometer"
         android:layout_toRightOf="@+id/RPM"
         android:layout_toEndOf="@+id/RPM" />
 
@@ -85,17 +86,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/Temperature_Value"
-        android:layout_alignTop="@+id/temperature"
-        android:layout_toRightOf="@+id/temperature"
-        android:layout_toEndOf="@+id/temperature" />
+        android:text="Obciążenie silnika:"
+        android:id="@+id/engine_load"
+        android:layout_below="@+id/status"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="zczytaj parametry"
-        android:id="@+id/button"
-        android:layout_below="@+id/fuel_consumption"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="---"
+        android:id="@+id/engine_load_value"
+        android:layout_above="@+id/oil_temperature"
         android:layout_toRightOf="@+id/engine_load"
         android:layout_toEndOf="@+id/engine_load" />
 
@@ -105,9 +108,19 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Temperatura oleju:"
         android:id="@+id/oil_temperature"
-        android:layout_below="@+id/temperature"
+        android:layout_below="@+id/engine_load"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="---"
+        android:id="@+id/oil_temperature_value"
+        android:layout_alignTop="@+id/oil_temperature"
+        android:layout_toRightOf="@+id/oil_temperature"
+        android:layout_toEndOf="@+id/oil_temperature" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -123,8 +136,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Ciśnienie paliwa:"
-        android:id="@+id/fuel_pressure"
+        android:text="---"
+        android:id="@+id/throttle_position_value"
+        android:layout_alignTop="@+id/throttle_position"
+        android:layout_toRightOf="@+id/throttle_position"
+        android:layout_toEndOf="@+id/throttle_position" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Przepływomierz:"
+        android:id="@+id/mass_air_flow"
         android:layout_below="@+id/throttle_position"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -133,38 +156,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Napięcie na module:"
-        android:id="@+id/textView"
-        android:layout_below="@+id/fuel_pressure"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="---"
+        android:id="@+id/mass_air_flow_value"
+        android:layout_alignTop="@+id/mass_air_flow"
+        android:layout_toRightOf="@+id/mass_air_flow"
+        android:layout_toEndOf="@+id/mass_air_flow" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Obciążenie silnika:"
-        android:id="@+id/engine_load"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Przepływomierz:"
-        android:id="@+id/mass_air_flow"
-        android:layout_below="@+id/engine_load"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Zużycie paliwa:"
-        android:id="@+id/fuel_consumption"
+        android:text="Ciśnienie paliwa:"
+        android:id="@+id/fuel_pressure"
         android:layout_below="@+id/mass_air_flow"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -173,10 +176,63 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="---"
+        android:id="@+id/fuel_pressure_value"
+        android:layout_alignBaseline="@+id/fuel_pressure"
+        android:layout_alignBottom="@+id/fuel_pressure"
+        android:layout_toRightOf="@+id/fuel_pressure"
+        android:layout_toEndOf="@+id/fuel_pressure" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Temperatura zewnętrzna:"
+        android:id="@+id/temperature"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/fuel_pressure" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/Temperature_Value"
+        android:layout_alignTop="@+id/temperature"
+        android:layout_toRightOf="@+id/temperature"
+        android:layout_toEndOf="@+id/temperature"
+        android:text="---" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ciśnienie kolektora:"
+        android:id="@+id/IntakeManifoldPressure"
+        android:layout_below="@+id/temperature"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="---"
+        android:id="@+id/IntakeManifoldPressure_Value"
+        android:layout_above="@+id/info_baner"
+        android:layout_toRightOf="@+id/IntakeManifoldPressure"
+        android:layout_toEndOf="@+id/IntakeManifoldPressure" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Dane o aucie"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/info_baner"
+        android:layout_below="@+id/IntakeManifoldPressure"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -184,7 +240,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Nr VIN:"
         android:id="@+id/vin_number"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/info_baner"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -192,19 +248,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Typ silnika:"
-        android:id="@+id/fuel_type"
-        android:layout_below="@+id/vin_number"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="---"
+        android:id="@+id/vin_number_value"
+        android:layout_alignTop="@+id/vin_number"
+        android:layout_toRightOf="@+id/vin_number"
+        android:layout_toEndOf="@+id/vin_number" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="funkcje obd"
+        android:text="ROZPOCZNIJ POMIAR"
         android:id="@+id/button2"
-        android:layout_above="@+id/button"
-        android:layout_toRightOf="@+id/RPM_Value"
-        android:layout_toEndOf="@+id/RPM_Value" />
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/vin_number_value"
+        android:layout_centerHorizontal="true" />
 
+    <com.cardiomood.android.controls.gauge.SpeedometerGauge
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:id="@+id/speedometer"
+        android:layout_below="@+id/speed"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.cardiomood.android.controls.gauge.SpeedometerGauge
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RPMmeter"
+        android:layout_below="@+id/speedometer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp" />
+
+</RelativeLayout>
+</ScrollView>
 </RelativeLayout>
