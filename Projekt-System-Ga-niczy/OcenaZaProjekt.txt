@@ -1,0 +1,13 @@
+[1] : 19
+[2] : 13
+[3] : 9
+[4] : Null
+[5] : 15
+
+Comment:
+[1] : zalozenia spelnione w 100%, nie udalo sie zintegrowac systemu z serwem sterujacym zaworem, ale to dodatkowa funkcjonalnosc; niewielkim minusem jest brak projektu zasilania
+[2] : po zdefiniowaniu zalozen projektowych tylko jedna aktualizacja, a nastepnie zakonczenie projektu; gdyby wasz projekt byl komercyjny, z duzym prawdopodobienstwem mielibyscie problem z jego oddaniem; dzisiejszy styl pracy w IT zaklada stala wymiane informacji miedzy inzynierami i biznesem
+[3] : praca samodzielna, integracja elektroniki i oprogramowania;
+[4] : czekamy na ocene kolegow
+[5] : w waszym repozytorium brakuje filmiku z pierwszej wersji systemu (bez serwa), jest tylko link do youtube w tytule jednego z commitow, a uwazam ze byl on lepszej jakosci, niz ostatni filmik przedstawiajacy dzialanie zaworu; zeby nie zanizac oceny, biore pod uwage tylko ten poprzedni (mozecie wrzucic jakis plik z linkiem do niego); na filmie dosyc przejrzyscie przedstawiono poprawne dzialanie wszystkich komponentow systemu (LCD, czujnik dumy, termometr, buzzer, diody); mozna bylo skorzystac z mozliwosci cyfrowego montazu wideo i podzielic ekran na sektory w ktorych mozna bylo wyswietlic parametry wszystkich komponentow i efektory; zapomniano tez wspomniec o glownym zastosowaniu projektu (gaszenie pozaru w samochodzie, wlaczenie swiatel awaryjnych);
+
