@@ -1,0 +1,7 @@
+﻿  main.cpp
+c:\users\kacper\desktop\cplusplus\mynewopencv\mynewopencv\main.cpp(77): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\kacper\desktop\cplusplus\mynewopencv\mynewopencv\main.cpp(78): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\kacper\desktop\cplusplus\mynewopencv\mynewopencv\main.cpp(80): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\kacper\desktop\cplusplus\mynewopencv\mynewopencv\main.cpp(81): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\kacper\desktop\cplusplus\mynewopencv\mynewopencv\main.cpp(98): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  MyNewOpenCV.vcxproj -> C:\Users\Kacper\Desktop\Cplusplus\MyNewOpenCV\x64\OPENCV_DEBUG\MyNewOpenCV.exe
