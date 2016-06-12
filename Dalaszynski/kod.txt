@@ -1,0 +1,156 @@
+int cny1_pin = 0;     // analog pin, do którego pod³¹czony jest pierwszy CNY70
+int cny1_val = 0;     // zmienna przechowuj¹ca odczytan¹ wartoœæ z pierwszego CNY70
+int cny2_pin = 1; 
+int cny2_val = 0;
+int cny3_pin = 2; 
+int cny3_val = 0;
+
+//zmienne u¿yte do sterowania mostkiem L293D
+int EN1 = 6;
+int in1Pin = 5;
+int in2Pin = 4;
+int EN2 = 11;
+int in3Pin = 10;
+int in4Pin = 9;
+
+//zmienne do sterowania silnikami
+int speed = 100; //Wartoœæ wype³nienia PWM 0...255; prêdkoœæ obrotowa silnika
+int direction = 0; //zapisuje pozycjê przednich kó³. 1=lewo, 0=prosto, 2=prawo
+
+
+void setup()
+
+{
+  pinMode(in1Pin, OUTPUT);
+  pinMode(in2Pin, OUTPUT);
+  pinMode(in3Pin, OUTPUT);
+  pinMode(in4Pin, OUTPUT);
+  pinMode(EN1, OUTPUT);
+  pinMode(EN2, OUTPUT);
+  //Serial.begin(9600);          //  setup serial - do monitorowania rezultatów na monitorze komputera
+}
+
+
+
+void loop()
+
+{
+  void check_cny(); //odczytuje œredni¹ wartoœæ z czujników odbiciowych. Zakres 0...1023. Im bli¿ej zera, tym ciemniejsza powierzchnia.
+ 
+//jedŸ PROSTO 
+  if( cny1_val>100 && cny2_val <100 && cny3_val > 100 ) //czarna linia pod srodkowym czujnikiem
+  {
+    if(direction == 0)        //ko³a s¹ prosto
+      setMotor_front(0,0,0); //wy³¹czenie silnika skrêtu, jazda prosto
+    else if (direction == 1) //ko³a s¹ w lewo
+    {
+      skrec_prawo();
+      direction = 0;
+    }
+    else if (direction == 2) //ko³a s¹ w prawo
+    {
+      skrec_lewo();
+      direction = 0;
+    }
+    
+  setMotor_back(speed,1,0); //jazda do przodu
+  }
+  
+//jedŸ w LEWO
+  if( cny1_val<100 && cny2_val >100 && cny3_val > 100 ) //czarna linia pod lewym czujnikiem
+  {
+    if (direction == 1) //jeœli ko³a s¹ w lewo - nic nie zmieniaj
+    ;
+    else
+    skrec_lewo();
+    direction = 1;
+  }
+
+//jedŸ w PRAWO
+  if( cny1_val>100 && cny2_val >100 && cny3_val<100 ) //czarna linia pod prawym czujnikiem
+  {
+    if (direction == 2) //jeœli ko³a s¹ w prawo - nic nie zmieniaj
+    ;
+    else
+    skrec_prawo();
+    direction = 2;
+  }
+
+//STOP - brak czarnej lini pod czujnikami
+  if( cny1_val>100 && cny2_val >100 && cny3_val > 100 ){
+    setMotor_front(speed=0,0,0); //wy³¹czenie silnika skretu
+    setMotor_back(speed=20,0,1); //jazda do ty³u == hamowanie
+    delay(1000);
+    setMotor_back(speed=0,0,0); //wy³¹czenie silnika
+  }
+}
+
+
+
+
+
+
+
+
+
+void check_cny()
+{
+  int i=0;
+  int suma =0;
+  
+  // sumowanie 10 wartoœci z 1. CNY70 i obliczenie œredniej
+  for(i=0;i<10;i++){
+    suma = suma + analogRead(cny1_pin);}
+  cny1_val = suma/10;
+  
+  // sumowanie 10 wartoœci z 2. CNY70 i obliczenie œredniej
+  suma =0;
+  for(i=0;i<10;i++){
+    suma = suma + analogRead(cny2_pin);}
+  cny2_val = suma/10;
+  
+  // sumowanie 10 wartoœci z 3. CNY70 i obliczenie œredniej
+  suma =0;
+  for(i=0;i<10;i++){
+    suma = suma + analogRead(cny3_pin);}
+  cny3_val = suma/10;
+  
+ // Serial.println("CNY1: ");         // sprawdzenie w terminalu
+ // Serial.println(cny1_val);         // sprawdzenie w terminalu
+ // Serial.println("CNY2: ");         // sprawdzenie w terminalu
+ // Serial.println(cny2_val);         // sprawdzenie w terminalu
+ // Serial.println("CNY3: ");         // sprawdzenie w terminalu
+ // Serial.println(cny3_val);         // sprawdzenie w terminalu
+}
+
+
+
+void setMotor_front(int speed, boolean out1, boolean out2)
+{
+  analogWrite(EN1, speed);
+  digitalWrite(in1Pin, out1);
+  digitalWrite(in2Pin, out2);
+}
+
+void setMotor_back(int speed, boolean out1, boolean out2)
+{
+  analogWrite(EN1, speed);
+  digitalWrite(in1Pin, out1);
+  digitalWrite(in2Pin, out2);
+}
+
+void skrec_lewo()
+{
+  setMotor_front(speed,1,0); //skrêt w lewo
+  delay(1000);
+  setMotor_front(speed=0,0,0); //wy³¹czenie silnika skretu
+  setMotor_back(speed,1,0); //jazda do przodu
+}
+
+void skrec_prawo()
+{
+  setMotor_front(speed,0,1); //skrêt w prawo
+  delay(1000);
+  setMotor_front(speed=0,0,0); //wy³¹czenie silnika skretu
+  setMotor_back(speed,1,0); //jazda do przodu
+}
