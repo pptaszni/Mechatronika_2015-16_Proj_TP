@@ -1,5 +1,14 @@
 package mati.obd2bluetooth;
 
+/*
+Aplikacja sczytujaca bieżące parametry z ECU auta poprzez ELM327 Bluetooth
+1. Najpierw sparować ELM327 z telefonem
+2. Po uruchomeiniu apki można nawiązać połączenie klikając w menu "Połącz z ELM327 przez Bluetooth"
+3. W przypadku wyłączonego Bluetooth, użytkownik zostanie poproszony o jego włączenie
+4. Po poprawnym połączeniu status połączenia powinien zmienić się na "Połączono"
+5. W tym momencie można kliknać "Rozpocznij pomiar", aby uruchomić odczyt parametrów auta
+*/
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -42,32 +51,29 @@ import java.io.IOException;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
-    BluetoothClient bc;
-    //OBD_Running OBD_reading;
-    TextView BT_status, rpm_value, speed_value, temperature_value, EngineLoad_Value, OilTemperature_Value;
-    TextView ThrottlePosiotion_Value, MassAirFlow_Value, FuelPressure_Value, IntakeManifoldPressure_Value;
-    TextView VinNr_Value;
-    private static final String TAG = "MyActivity";
-    private SpeedometerGauge speedometer, RPMmeter;
-    int count=0;
-
-
     private GoogleApiClient client;
+    //klasa od funkcji połączenia Bluetooth
+    BluetoothClient bc;
+    //TextView do wyświetlania parametrów
+    TextView BT_status, rpm_value, speed_value, temperature_value, EngineLoad_Value, OilTemperature_Value;
+    TextView ThrottlePosiotion_Value, MassAirFlow_Value, FuelPressure_Value, IntakeManifoldPressure_Value, VinNr_Value;
+    //TAG to logów
+    private static final String TAG = "MyActivity";
+    //obrotomierze
+    private SpeedometerGauge speedometer, RPMmeter;
+    //Handler do wątku Runnable readingValues
     private final Handler mHandler = new Handler();
-
-    AmbientAirTemperatureCommand temperatureCommand = new AmbientAirTemperatureCommand();
-    //ta powyżej do sprawdzenia
+    //komendy z biblioteki OBD do odczytu parametrów
     RPMCommand engineRpmCommand = new RPMCommand();
     SpeedCommand speedCommand = new SpeedCommand();
     LoadCommand EngineLoadCommand = new LoadCommand();
-    OilTempCommand OilTemperatureCommand = new OilTempCommand();
     ThrottlePositionCommand ThrottleCommand = new ThrottlePositionCommand();
     MassAirFlowCommand AirFlowCommand = new MassAirFlowCommand();
+    AmbientAirTemperatureCommand temperatureCommand = new AmbientAirTemperatureCommand();
+    OilTempCommand OilTemperatureCommand = new OilTempCommand();
     FuelPressureCommand PressureFuelCommand = new FuelPressureCommand();
     IntakeManifoldPressureCommand IMPCommand = new IntakeManifoldPressureCommand();
     VinCommand VinNrCommand = new VinCommand();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //OBD_reading = new OBD_Running();
 
         BT_status = (TextView) this.findViewById(R.id.status_connection);
         rpm_value = (TextView) this.findViewById(R.id.RPM_Value);
@@ -91,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         IntakeManifoldPressure_Value = (TextView) findViewById(R.id.IntakeManifoldPressure_Value);
         VinNr_Value = (TextView) findViewById(R.id.vin_number_value);
 
-        //prędkościomierz
+        //prędkościomierz - inicjalizacja, ustawienie zakresu, podziałki, kolorów zakresów
         speedometer = (SpeedometerGauge) findViewById(R.id.speedometer);
         speedometer.setMaxSpeed(200);
         speedometer.setMajorTickStep(20);
@@ -107,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Obrotomierz
+        //Obrotomierz - inicjalizacja, ustawienie zakresu, podziałki, kolorów zakresów
         RPMmeter = (SpeedometerGauge) findViewById(R.id.RPMmeter);
         RPMmeter.setMaxSpeed(8000);
         RPMmeter.setMajorTickStep(1000);
@@ -123,28 +128,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        //Button przycisk = (Button) this.findViewById(R.id.button);
+        //przycisk do rozpoczęcia pomiaru
         Button przycisk2 = (Button) this.findViewById(R.id.button2);
 
         przycisk2.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
-                //configOBD();
-                //OBD_reading.execute();
-                mHandler.postDelayed(readingValues, 100); //TODO:czas dopasować na koniec
+                //uruchomienie wątku readingValues po 100 ms
+                mHandler.postDelayed(readingValues, 100);
             }
         });
 
-        /*przycisk.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                openOBD();
-            }
-
-        });*/
 
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
@@ -158,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
+        //połączenie id przycisków w menu do funkcji połączenia/rozłączenia Bluetooth
         if (id == R.id.connect) {
             try {
                 bc.findBT();
@@ -172,7 +167,8 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (IOException ignored) {
             }
-        } else if (id == R.id.disconnect) {
+        }
+        else if (id == R.id.disconnect) {
             try {
                 bc.closeBT();
                 BT_status.setText("Rozłączono");
@@ -183,56 +179,60 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //wątek do odczytu i wyświetlania parametrów
     private final Runnable readingValues;
     {
         readingValues = new Runnable() {
             public void run() {
                 try {
+                    //odczyt poszczególnych parametrów z komputera pokładowego poprzez Bluetooth
                     //temperatureCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                    //TODO:sprawdzić tą powyżej
                     engineRpmCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
                     speedCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
                     EngineLoadCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
                     //OilTemperatureCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
                     ThrottleCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                    AirFlowCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
+                    //AirFlowCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
                     //PressureFuelCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                    //IMPCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
+                    IMPCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
                     //VinNrCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
                     //FuelTypeCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
 
-
+                    //wyświetlenie poszczególnych wartości wraz z odpowiednimi jednostkami
                     rpm_value.setText(engineRpmCommand.getFormattedResult());
                     speed_value.setText(speedCommand.getFormattedResult());
                     //temperature_value.setText(temperatureCommand.getFormattedResult());
                     EngineLoad_Value.setText(EngineLoadCommand.getFormattedResult());
                     //OilTemperature_Value.setText(OilTemperatureCommand.getFormattedResult());
                     ThrottlePosiotion_Value.setText(ThrottleCommand.getFormattedResult());
-                    MassAirFlow_Value.setText(AirFlowCommand.getFormattedResult());
+                    //MassAirFlow_Value.setText(AirFlowCommand.getFormattedResult());
                     //FuelPressure_Value.setText(PressureFuelCommand.getFormattedResult());
-                    //IntakeManifoldPressure_Value.setText(IMPCommand.getFormattedResult());
+                    IntakeManifoldPressure_Value.setText(IMPCommand.getFormattedResult());
                     //VinNr_Value.setText(VinNrCommand.getFormattedResult());
                     //FuelType_Value.setText(FuelTypeCommand.getFormattedResult());
 
-                    RPMmeter.setSpeed(2500, 1000, 300); //TODO:tu zmiana prędkości
-                    speedometer.setSpeed(33, 1000, 300); //TODO:tu zmiana prędkości
+                    //ustawienie odczytanych wartości na obrotomierze, w nawiasie kolejno: wartość, okres, opóźnienie startu ustawienia
+                    RPMmeter.setSpeed(Double.parseDouble(engineRpmCommand.getCalculatedResult()), 0, 0);
+                    speedometer.setSpeed(Double.parseDouble(speedCommand.getCalculatedResult()), 0, 0);
 
-                    Log.d(TAG, "RPM: " + engineRpmCommand.getFormattedResult());
-                    Log.d(TAG, "Speed: " + speedCommand.getFormattedResult());
-                    Log.d(TAG, "Temp: " + temperatureCommand.getFormattedResult());
-                    Log.d(TAG, "Temp: " + EngineLoadCommand.getFormattedResult());
+                    //logi do sprawdzania odczytanych wartości w debugerze
+                    //Log.d(TAG, "RPM: " + engineRpmCommand.getFormattedResult());
+                    //Log.d(TAG, "Speed: " + speedCommand.getFormattedResult());
+                    //Log.d(TAG, "Temp: " + temperatureCommand.getFormattedResult());
+                    //Log.d(TAG, "Temp: " + EngineLoadCommand.getFormattedResult());
 
                 }
                 catch (InterruptedException | IOException e) {
                     e.printStackTrace();
                 }
                 finally {
-                    mHandler.postDelayed(readingValues, 100); //TODO: dopasować ten czas pomairu
+                    mHandler.postDelayed(readingValues, 100);
                 }
             }
         };
     }
 
+    //inicjalizacja połączenia z ELM327 poprzez Bluetooth
     void openOBD()
     {
         try {
@@ -247,11 +247,10 @@ public class MainActivity extends AppCompatActivity {
             new SelectProtocolCommand(ObdProtocols.AUTO).run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
             Log.d(TAG, "Po Select protokołu");
             //new AmbientAirTemperatureCommand().run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream()); TODO: Sprawdzić czy bez tego poniżej też pójdzie
-            Log.d(TAG, "Po Ostatnim");
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
         }
     }
-
 
     @Override
     public void onStart() {
@@ -292,96 +291,4 @@ public class MainActivity extends AppCompatActivity {
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
     }
-
-    /*
-    private DataPoint[] SetEngineLoad() {
-        int count = 100;
-        DataPoint[] values = new DataPoint[count];
-        for (int i = 0; i < count; i++) {
-            double x = i; //TODO: pomnożyć razy ustawiony czas
-            double y = Double.parseDouble(EngineLoadCommand.getCalculatedResult());
-            DataPoint v = new DataPoint(x, y);
-            values[i] = v;
-        }
-        return values;
-    }
-
-    double mLastRandom = 2;
-    Random mRand = new Random();
-
-    private double getRandom() {
-        return mLastRandom += mRand.nextDouble() * 0.5 - 0.25;
-    }
-
-    public class OBD_Running extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected void onPreExecute() {
-        /*
-         *    do things before doInBackground() code runs
-         *    such as preparing and showing a Dialog or ProgressBar
-
-           // openOBD();
-        }
-
-        @Override
-        protected void onProgressUpdate(Void... values) {
-        /*
-         *    updating data
-         *    such a Dialog or ProgressBar
-
-
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            //do your work here
-
-
-            try {
-                //temperatureCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                //sprawdzić tą powyżej
-                engineRpmCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                speedCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                EngineLoadCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                //OilTemperatureCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                ThrottleCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                AirFlowCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                //PressureFuelCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                //IMPCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                //VinNrCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                //FuelTypeCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-                //temperatureCommand.run(bc.mmSocket.getInputStream(), bc.mmSocket.getOutputStream());
-            } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            rpm_value.setText(engineRpmCommand.getFormattedResult());
-            speed_value.setText(speedCommand.getFormattedResult());
-            //temperature_value.setText(temperatureCommand.getFormattedResult());
-            EngineLoad_Value.setText(EngineLoadCommand.getFormattedResult());
-            //OilTemperature_Value.setText(OilTemperatureCommand.getFormattedResult());
-            ThrottlePosiotion_Value.setText(ThrottleCommand.getFormattedResult());
-            MassAirFlow_Value.setText(AirFlowCommand.getFormattedResult());
-            //FuelPressure_Value.setText(PressureFuelCommand.getFormattedResult());
-            //IntakeManifoldPressure_Value.setText(IMPCommand.getFormattedResult());
-            //VinNr_Value.setText(VinNrCommand.getFormattedResult());
-            //FuelType_Value.setText(FuelTypeCommand.getFormattedResult());
-
-            Log.d(TAG, "RPM: " + engineRpmCommand.getFormattedResult());
-            Log.d(TAG, "Speed: " + speedCommand.getFormattedResult());
-            Log.d(TAG, "Temp: " + temperatureCommand.getFormattedResult());
-            //Log.d(TAG, "Temp: " + OilTemperatureCommand.getFormattedResult());
-        /*
-         *    do something with data here
-         *    display it or send to mainactivity
-         *    close any dialogs/ProgressBars/etc...
-
-        }
-    }*/
 }

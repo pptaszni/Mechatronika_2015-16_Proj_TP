@@ -14,19 +14,24 @@ import java.util.Set;
 import java.util.UUID;
 
 public class BluetoothClient {
+    //zmienne BT: adapter BT w telefonie, wykryte urządzenie BT, Socket BT, kanały I/O do przesyłu danych
     BluetoothAdapter mBluetoothAdapter;
     BluetoothSocket mmSocket;
     BluetoothDevice mmDevice;
     OutputStream mmOutputStream;
     InputStream mmInputStream;
+
     Activity activity;
 
+    //połaczenie klasy Bluetooth z MainActivity
     public BluetoothClient(Activity activity)
     {
         this.activity=activity;
         activity.setContentView(R.layout.activity_main);
     }
 
+    //sprawdzenie czy jest adapter BT w telefonie, jeśli wyłączony prośba o jego uruchomienie
+    //ustawienie "OBDII" jako domyślnego urządzenia BT
     void findBT()
     {
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -55,6 +60,7 @@ public class BluetoothClient {
         }
     }
 
+    //otwarcie połączenia i kanałów I/O z wybranym urządzeniem
     void openBT() throws IOException
     {
         UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
@@ -64,6 +70,7 @@ public class BluetoothClient {
         mmInputStream = mmSocket.getInputStream();
     }
 
+    //zamknięcie połączenia i kanałów I/O z wybranym urządzeniem
     void closeBT() throws IOException
     {
         mmOutputStream.close();

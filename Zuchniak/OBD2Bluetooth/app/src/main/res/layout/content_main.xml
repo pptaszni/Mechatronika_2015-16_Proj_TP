@@ -259,9 +259,10 @@
         android:layout_height="wrap_content"
         android:text="ROZPOCZNIJ POMIAR"
         android:id="@+id/button2"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:layout_below="@+id/vin_number_value"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/info_baner"
+        android:layout_alignEnd="@+id/info_baner" />
 
     <com.cardiomood.android.controls.gauge.SpeedometerGauge
         android:layout_height="wrap_content"
