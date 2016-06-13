@@ -1,0 +1,11 @@
+Algorytm wykrywaj¹cy pojazdy zosta³ stworzony na podstawie https://www.fer.unizg.hr/_download/repository/KDI_Darko_Juric.pdf
+
+Pierwszym krokiem jest wykonanie progowania z dosyæ niskim progiem. Niestety z uwagi na kamerê u¿yt¹ do nagrania obraz ma niski kontrast i trzeba u¿yæ wysoki próg. 
+
+Nastêpnie zastosowane jest progowanie adaptacyjne, tzn próg jest zmieniany w zale¿noœci od zawartoœci klatki. Jest on obliczany wg zale¿noœci T = u - ks, gdzie u to œrednia wartoœæ jadnoœci obiektów, a s to ich odchylenie standardowe. k zosta³o dobrane eksperymentalnie. 
+
+Ostatnim krokiem by³o wykrycie obiektów za pomoc¹ SimpleBlobDetector. 
+
+Uda³o siê skutecznie odfiltrowaæ elementy nie ciemniejsze, ale niestety SimpleBlobDetector nie jest na tyle potê¿ny, aby odró¿niæ lampê uliczn¹ od samochodu i czasami zaznacza te pierwsze. 
+
+Mo¿e byæ problem z otworzeniem programu na innym komputerze ze wzglêdu na brak bibliotek opencv, dlatego nagra³em krótki filmik "test.avi" prezentuj¹cy dzia³anie programu.
