@@ -1,0 +1,14 @@
+[1] : 20
+[2] : 15
+[3] : 9
+[4] : Null
+[5] : 17
+
+Comment:
+[1] : zalozenia spelnione w 100%, aplikacja dziala stabilnie (na prezentacji), zaimplementowano odczyt i wizualizacje parametrow auta, przeprowadzono testy; nie udalo sie zaimplementowac dodatkowej funkcjonalnosci - kody bledow: odczyt/kasowanie
+[2] : praca w semestrze w miare systematyczna, brak aktywnosci miedzy 02.04 a 16.05, odejmuje 1 pkt. za przekroczenie terminu (13.06 20.00)
+[3] : praca samodzielna, zapoznanie sie z nowym srodowiskiem (android), mimo braku doswiadczenia calkiem dobry efekt
+[4] : czekamy na ocene kolegow
+[5] : pisemny raport w sposob przejrzysty opisuje jaki byl cel projektu i co udalo sie zrealizowac; omowiono i uzasadniono ogolny design aplikacji; na filmie przedstawiono aplikacje podczas dzialania; minusami sa brak narracji w filmiku, stylistyka raportu (chyba wszyscy macie z tym problem ...), oraz brak instrukcji podlaczenia samego elm327
+
+
