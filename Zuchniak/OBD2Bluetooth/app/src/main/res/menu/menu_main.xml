@@ -5,11 +5,11 @@
     <item
         android:id="@+id/connect"
         android:orderInCategory="100"
-        android:title="Połącz Bluetooth"
+        android:title="Połącz z ELM327 przez Bluetooth"
         app:showAsAction="never" />
     <item
         android:id="@+id/disconnect"
         android:orderInCategory="100"
-        android:title="Rozłącz Bluetooth"
+        android:title="Rozłącz z ELM327 przez Bluetooth"
         app:showAsAction="never" />
 </menu>

@@ -1,0 +1,12 @@
+[1] : 16
+[2] : 17
+[3] : 10
+[4] : Null
+[5] : 18
+
+Comment:
+[1] : zalozenia spelnione w ~60%, ale biore pod uwage fakt ze projekt byl dosyc duzy i skomplikowany
+[2] : systematyczna praca przez caly semestr, postepy raportowane w miare czesto
+[3] : praca samodzielna, integracja elektroniki, oprogramowania i interfejsu pojazdu, projekt dosyc skomplikowany i trudny w realizacji
+[4] : czekamy na ocene kolegow
+[5] : na filmie w zrozumialy sposob wyjasniono na czym polega projekt, omowiono istniejace rozwiazanie, pokazano w jaki sposob ma ono zostac poprawione; oprocz tego dostarczono gotowe schematy z opisanymi wejsciami/wyjsciami; minusem jest ciaglosc wypowiedzi
