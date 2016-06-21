@@ -1,0 +1,13 @@
+[1] : 17
+[2] : 14
+[3] : 9
+[4] : Null
+[5] : 17
+
+Comment:
+[1] : na podstawie waszych raportow wnioskuje, ze program przetwarzajacy obraz oraz kontroler odpytujacy czujniki i ustawiajacy wyjscia sa osobnymi podprojektami; w takim wypadku wydaje sie ze zalozenia zostaly spelnione w 100%; drobne minusy to: jedno wyjscie dla 2 rodzajow swiatel (mijania, drogowe), jakosc kodu embedded (magic numbers, wadliwa logika), malo czytelny schemat
+[2] : praca w semestrze systematyczna, raporty umiarkowanie rzadko (2x/miesiac), odejmuje 2 pkt. za przekroczenie terminu o ponad tydzien (20.06 20.00)
+[3] : praca samodzielna, poruszono zagadnienia z dziedziny elektroniki i oprogramowania (high&low level)
+[4] : czekamy na ocene kolegow
+[5] : pisemny raport w sposob przejrzysty opisuje cel projektu i pokazuje co zostalo zrealizowane; omowiono wykorzystany sprzet i opisano zaimplementowane algorytmy; na 2 filmikach widoczne sa efekty dzialan obu systemow; minusy: brak komentarza odnosnie uzycia systemow w warunkach rzeczywistych, stylistyka raportu pisemnego i wypowiedzi
+
